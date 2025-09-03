@@ -50,5 +50,9 @@
       "prettier --write"
     ]
   },
-  "packageManager": "yarn@4.4.1"
+  "packageManager": "yarn@4.4.1",
+  "dependencies": {
+    "@backstage/plugin-auth-backend-module-google-provider": "^0.3.6",
+    "firebase": "^12.2.1"
+  }
 }

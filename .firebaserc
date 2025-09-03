@@ -1,0 +1,22 @@
+{
+  "projects": {
+    "staging": "arcadia-dev-2af84",
+    "production": "arcadiaprod-597f7"
+  },
+  "targets": {
+    "arcadia-dev-2af84": {
+      "hosting": {
+        "staging": [
+          "arcadia-dev-2af84"
+        ]
+      }
+    },
+    "arcadiaprod-597f7": {
+      "hosting": {
+        "production": [
+          "arcadiaprod-597f7"
+        ]
+      }
+    }
+  }
+}

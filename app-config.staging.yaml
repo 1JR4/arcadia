@@ -1,0 +1,25 @@
+# Staging Environment Configuration
+app:
+  title: Arcadia Developer Portal (Staging)
+  baseUrl: https://arcadia-staging.web.app
+
+backend:
+  baseUrl: https://arcadia-staging-api.web.app
+  auth:
+    keys:
+      - secret: ${BACKEND_SECRET}
+  database:
+    client: pg
+    connection:
+      host: ${POSTGRES_HOST}
+      port: ${POSTGRES_PORT}
+      user: ${POSTGRES_USER}
+      password: ${POSTGRES_PASSWORD}
+      database: ${POSTGRES_DB}
+
+auth:
+  providers:
+    google:
+      development:
+        clientId: ${GOOGLE_CLIENT_ID}
+        clientSecret: ${GOOGLE_CLIENT_SECRET}

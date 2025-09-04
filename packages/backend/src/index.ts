@@ -69,7 +69,7 @@ backend.add(import('@backstage/plugin-kubernetes-backend'));
 backend.add(import('@backstage/plugin-notifications-backend'));
 backend.add(import('@backstage/plugin-signals-backend'));
 
-// Firebase health check plugin - temporarily disabled for local development
-// backend.add(import('./plugins/firebase-health'));
+// Firebase health check plugin for troubleshooting
+backend.add(import('./plugins/firebase-health'));
 
 backend.start();

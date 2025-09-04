@@ -5,6 +5,9 @@ app:
 
 backend:
   baseUrl: https://backstage-backend--arcadia-dev-2af84.us-central1.hosted.app
+  listen:
+    port: ${PORT:8080}
+    host: 0.0.0.0
   auth:
     keys:
       - secret: ${BACKEND_SECRET}

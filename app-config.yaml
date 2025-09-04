@@ -15,8 +15,7 @@ backend:
   baseUrl: http://localhost:7008
   listen:
     port: ${PORT:7008}
-    # Uncomment the following host directive to bind to specific interfaces
-    # host: 127.0.0.1
+    host: ${BACKEND_HOST:0.0.0.0}
   csp:
     connect-src: ["'self'", 'http:', 'https:']
     # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference

@@ -5,11 +5,12 @@
       "rootDir": "./packages/backend",
       "ignore": [
         "node_modules",
-        ".git", 
+        ".git",
         "firebase-debug.log",
         "firebase-debug.*.log",
         "packages/app/dist"
-      ]
+      ],
+      "alwaysDeployFromSource": true
     }
   ],
   "hosting": [

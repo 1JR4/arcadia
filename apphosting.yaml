@@ -1,17 +1,19 @@
 runtime: nodejs20
 
 # Backend-specific configuration for monorepo  
-runCommand: "cd packages/backend && node dist/index.cjs.js"
+runCommand: "node packages/backend/dist/index.cjs.js"
 
 runConfig:
   minInstances: 0
   maxInstances: 10
   concurrency: 100
   cpu: 1
-  memoryMiB: 1024
+  memoryMiB: 512
 
 env:
   - variable: NODE_ENV
+    value: staging
+  - variable: BACKSTAGE_CONFIG_ENV
     value: staging
   - variable: BACKEND_SECRET
     secret: BACKEND_SECRET

@@ -2,7 +2,7 @@
   "apphosting": [
     {
       "backendId": "backstage-backend",
-      "rootDir": "./",
+      "rootDir": "./packages/backend",
       "ignore": [
         "node_modules",
         ".git", 

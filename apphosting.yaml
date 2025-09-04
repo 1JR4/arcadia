@@ -30,13 +30,7 @@ env:
   - variable: POSTGRES_DB
     secret: POSTGRES_DB
 
-# Build configuration for monorepo
-buildConfig:
-  runtime: nodejs20
-  commands:
-    - yarn install --frozen-lockfile
-    - yarn workspace backend build
-  outputDirectory: packages/backend/dist
-
-# Runtime configuration
-startCommand: cd packages/backend && node dist/index.cjs.js
+# Build and runtime configuration
+scripts:
+  buildCommand: yarn install --frozen-lockfile && yarn workspace backend build
+  runCommand: node packages/backend/dist/index.cjs.js

@@ -1,6 +1,6 @@
 runtime: nodejs20
 
-# Backend-specific configuration for monorepo
+# Backend-specific configuration for monorepo  
 runCommand: "cd packages/backend && node dist/index.cjs.js"
 
 runConfig:

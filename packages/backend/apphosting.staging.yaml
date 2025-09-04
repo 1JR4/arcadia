@@ -1,18 +1,8 @@
 runtime: nodejs20
 
-# Backend-specific configuration for monorepo
-runCommand: "cd packages/backend && node dist/index.cjs.js"
-
-runConfig:
-  minInstances: 0
-  maxInstances: 10
-  concurrency: 100
-  cpu: 1
-  memoryMiB: 1024
-
 env:
   - variable: NODE_ENV
-    value: production
+    value: staging
   - variable: BACKEND_SECRET
     secret: BACKEND_SECRET
   - variable: GOOGLE_CLIENT_ID
@@ -31,3 +21,8 @@ env:
     secret: POSTGRES_PASSWORD
   - variable: POSTGRES_DB
     secret: POSTGRES_DB
+
+resources:
+  cpu: 1
+  memoryMiB: 1024
+  concurrency: 80

@@ -1,23 +1,21 @@
 import { createBackendPlugin } from '@backstage/backend-plugin-api';
-import { createRouter } from '@backstage/backend-defaults/rootHttpRouter';
+import { httpRouterServiceRef } from '@backstage/backend-plugin-api';
 import { healthCheck } from '../firebase';
 
-export const firebaseHealthPlugin = createBackendPlugin({
+export default createBackendPlugin({
   pluginId: 'firebase-health',
   register(env) {
     env.registerInit({
       deps: {
-        httpRouter: createRouter,
+        httpRouter: httpRouterServiceRef,
       },
       async init({ httpRouter }) {
-        const router = httpRouter;
-        
-        router.get('/health', async (req, res) => {
+        httpRouter.get('/health', async (req, res) => {
           const health = await healthCheck();
           res.json(health);
         });
         
-        router.get('/firebase/status', async (req, res) => {
+        httpRouter.get('/firebase/status', async (req, res) => {
           const status = await healthCheck();
           res.json({
             message: 'Firebase SDK status',

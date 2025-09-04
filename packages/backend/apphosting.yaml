@@ -30,9 +30,5 @@ env:
   - variable: POSTGRES_DB
     secret: POSTGRES_DB
 
-# Build configuration for monorepo
-buildConfig:
-  runtime: nodejs18
-  commands:
-    - yarn install --frozen-lockfile
-    - yarn workspace backend build
+# Build configuration - App Hosting will run these from packages/backend/
+# No buildConfig needed - uses default Node.js build

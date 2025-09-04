@@ -7,6 +7,12 @@
  */
 
 import { createBackend } from '@backstage/backend-defaults';
+import { initializeApp } from 'firebase-admin/app';
+import { healthCheck } from './firebase';
+
+// Initialize Firebase Admin SDK
+// In App Hosting, this automatically uses the service account credentials
+initializeApp();
 
 const backend = createBackend();
 
@@ -62,5 +68,8 @@ backend.add(import('@backstage/plugin-kubernetes-backend'));
 // notifications and signals plugins
 backend.add(import('@backstage/plugin-notifications-backend'));
 backend.add(import('@backstage/plugin-signals-backend'));
+
+// Firebase health check plugin
+backend.add(import('./plugins/firebase-health'));
 
 backend.start();

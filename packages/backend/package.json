@@ -8,9 +8,9 @@
     "role": "backend"
   },
   "scripts": {
-    "start": "node dist/index.cjs.js",
+    "start": "node packages/backend/dist/index.cjs.js",
     "start:dev": "backstage-cli package start",
-    "build": "backstage-cli package build",
+    "build": "backstage-cli package build && tar -xzf dist/bundle.tar.gz && rm dist/*.tar.gz",
     "lint": "backstage-cli package lint",
     "test": "backstage-cli package test",
     "clean": "backstage-cli package clean",
@@ -46,6 +46,7 @@
     "@backstage/plugin-techdocs-backend": "^2.0.5",
     "app": "link:../app",
     "better-sqlite3": "^12.0.0",
+    "firebase-admin": "^12.6.0",
     "node-gyp": "^10.0.0",
     "pg": "^8.11.3"
   },

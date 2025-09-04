@@ -30,5 +30,6 @@ env:
   - variable: POSTGRES_DB
     secret: POSTGRES_DB
 
-# Build configuration - App Hosting will run these from packages/backend/
-# No buildConfig needed - uses default Node.js build
+# Build configuration for App Hosting
+buildConfig:
+  runtime: nodejs18

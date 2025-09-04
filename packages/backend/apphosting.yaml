@@ -1,12 +1,4 @@
-# Firebase App Hosting configuration for Backstage backend
-# For monorepo: backend code is in packages/backend/
-runConfig:
-  minInstances: 0
-  maxInstances: 10
-  concurrency: 1000
-  cpu: 1
-  memoryMiB: 2048
-  timeoutSeconds: 3600
+runtime: nodejs20
 
 env:
   - variable: NODE_ENV
@@ -30,6 +22,7 @@ env:
   - variable: POSTGRES_DB
     secret: POSTGRES_DB
 
-# Build configuration for App Hosting
-buildConfig:
-  runtime: nodejs18
+resources:
+  cpu: 1
+  memoryMiB: 1024
+  concurrency: 80
